@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cálculo da área </title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div class="container">
+    <h1>Escolha a Figura Geométrica:</h1> <br>
+    <div id="botoes">
+        <input type="radio" name="rdbFigura" value="quadrado" onclick="adcElemento_q()">Quadrado
+        <input type="radio" name="rdbFigura" value="círculo" onclick="adcElemento_c()">Círculo
+        <input type="radio" name="rdbFigura" value="triângulo" onclick="adcElemento_t()">Triângulo
+    </div>
+    <p id="exibir"></p>
+<div id="elementosDiv"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+
+</html>

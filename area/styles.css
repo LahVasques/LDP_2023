@@ -1,0 +1,19 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.container{
+    padding: 5% 30%;
+
+}
+
+.elementosDiv{
+    padding: 5% 10%;
+    margin-bottom: 10px;
+}
+
+h1{
+    font-size: 30px;
+}
+

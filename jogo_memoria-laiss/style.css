@@ -1,0 +1,245 @@
+* {
+  /* box-sizing: border-box; */
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family:Verdana, Tahoma, sans-serif;
+}
+
+
+
+body {
+  background-color: #F8F7F3;
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*tela inicio*/
+
+#StartScreen{
+  padding: 20%;
+  margin: 10px;
+}
+
+.content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content h1{
+  margin-bottom: 50px;
+  font-size: 100px;
+}
+
+#img1{
+  position: absolute;
+  top: -100px;
+  left: -80px;
+  width: 500px;
+}
+
+#img2{
+  position: absolute;
+  bottom: -100px;
+  right: -80px;
+  width: 500px;
+}
+
+#startButton{
+  font-size: 35px;
+}
+
+#JogarNovamente{
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-size: 15px;
+}
+
+.playButton{
+  border: none;
+  width: 170px;
+  height: 60px;
+  flex-shrink: 0; 
+
+
+  color: #F8F7F3;
+  border-radius: 77px;
+  background: #526494; 
+}
+
+.playButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.playButton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.playButton:hover span {
+  padding-right: 25px;
+}
+
+.playButton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/*Tela Jogo*/
+#GameScreen{
+  margin: 5%;
+  padding: 10%;
+  height: 100vh;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#game{
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 620px;
+  height: 620px;
+}
+
+#game, 
+#controles{
+  border-radius: 50%;
+  border: 1px solid #FEC946;
+  background-color: #F8F5E7;
+}
+
+.points {
+  display: flex;
+  justify-content: left;
+  flex-direction: row;
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+
+.score, .highScore{
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  padding: 10px;
+  border-radius: 50px;
+  border: 3px solid #000;
+}
+
+.score img,
+.highScore img{
+  height: 30px;
+  margin-right: 10px;
+} 
+
+
+
+.centro {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#buttons {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 560px;
+  height: 570px;
+}
+  
+#buttons > button {
+  border: none;
+  cursor: pointer;
+  display: block;
+  width: 270px;
+  height: 270px;
+  margin: 5px;
+}
+  
+#buttons > button:disabled {
+  cursor: not-allowed;
+}
+
+#buttons > button:active,
+#buttons > button.active {
+  filter: brightness(1.5) !important;
+}
+
+#green {
+  background-color: #319B89;
+  border-radius: 100% 5% 0 5%;
+}
+
+#red {
+  background-color: #DF5729;
+  border-radius: 5% 100% 5% 0;
+}
+
+#blue {
+  background-color: #526494;
+  border-radius: 0 5% 100% 5%;
+}
+
+#yellow {
+  background-color: #FEC946;
+  border-radius: 5% 0 5% 100%;
+}
+
+#controles {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 270px;
+  height: 270px;
+}
+
+#controles h1 {
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-bottom: 0.5em;
+  font-size: 1.3rem;
+}
+
+#controles > button {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 1em;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+

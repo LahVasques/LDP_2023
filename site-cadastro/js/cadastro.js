@@ -102,43 +102,26 @@ function validarFormulario() {
 function redirecionar() {
     if (validarFormulario()) {
         // Obter os valores do formulário
-        let usuario = document.getElementById('tusuario').value;
-        let email = document.getElementById('temail').value;
-        let senha1 = document.getElementById('tsenha1').value;
-        let nome = document.getElementById('tnome').value;
-        let telefone = document.getElementById('tnumero').value;
-        let sexo = document.querySelector('input[name="rdsexo"]:checked').value;
-        let linguagens = document.querySelectorAll('input[name="chk_language"]:checked');
+        let tusuario = document.getElementById('tusuario').value;
+        let temail = document.getElementById('temail').value;
+        let tsenha1 = document.getElementById('tsenha1').value;
+        let tnome = document.getElementById('tnome').value;
+        let ttelefone = document.getElementById('tnumero').value;
+        let inpsexo = document.querySelector('input[name="rdsexo"]:checked').value;
+        let inplinguagens = document.querySelectorAll('input[name="chk_language"]:checked');
 
-        // Criar uma nova linha na tabela
-        let tabela = document.getElementById("tabelaUsuarios");
-        let novaLinha = tabela.insertRow(-1); // -1 para adicionar no final da tabela
+        let usuarioData = {
+            usuario: tusuario,
+            email: temail,
+            senha: tsenha1,
+            nome: tnome,
+            telefone: ttelefone,
+            sexo: inpsexo,
+            linguagens: Array.from(inplinguagens).map(lang => lang.value).join(", ")
+        };
 
-        // Atribuir um ID único à nova linha
-        let idUnico = "usuario" + Date.now(); // Usando a timestamp como ID único
-        novaLinha.id = idUnico;
+        localStorage.setItem('usuarioData', JSON.stringify(usuarioData));
 
-        // Adicionar células à nova linha com os valores do formulário
-        let celulaUsuario = novaLinha.insertCell(0);
-        celulaUsuario.innerHTML = usuario;
-
-        let celulaEmail = novaLinha.insertCell(1);
-        celulaEmail.innerHTML = email;
-
-        let celulaSenha = novaLinha.insertCell(2);
-        celulaSenha.innerHTML = senha1;
-
-        let celulaNome = novaLinha.insertCell(3);
-        celulaNome.innerHTML = nome;
-
-        let celulaTelefone = novaLinha.insertCell(4);
-        celulaTelefone.innerHTML = telefone;
-
-        let celulaSexo = novaLinha.insertCell(5);
-        celulaSexo.innerHTML = sexo;
-
-        let celulaLinguagens = novaLinha.insertCell(6);
-        celulaLinguagens.innerHTML = Array.from(linguagens).map(lang => lang.value).join(", ");
 
         // Redirecionar
         console.log("Redirecionando...");

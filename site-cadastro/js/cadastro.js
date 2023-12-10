@@ -167,7 +167,7 @@ function visualizar(pagina, novo = false) {
     if (pagina === "cadastro") {
         if (novo) {
             limparDados();
-            limparLocalStorage(); // Add this line to clear localStorage
+            limparLocalStorage();
         }
         document.getElementById("tusuario").focus();
     }
@@ -184,8 +184,6 @@ function enviarDados() {
         const linguagens = Array.from(document.querySelectorAll('input[name="chk_language"]:checked')).map(checkbox => checkbox.value);
 
         inserirPessoa(usuario, email, senha, nome, telefone, sexo, linguagens);
-
-        // Additional code if needed after registration
 
         limparDados();
         visualizar('lista');
